@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+:root {
+  --title-color: #a01d00;
+  --point-color: #ffb3a2;
+  --main-background-color: #fffde7;
+  --checked-color: #ff2f00;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.toDoLi_wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* header */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 auto 20px;
+  padding: 10px 15px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 1.5rem;
+  border-bottom: 2px dashed var(--point-color);
+  background-color: var(--main-background-color);
+}
+.toDoLi_titleIcon {
+  margin: 0 10px 0;
+  color: var(--point-color);
+  font-size: 2rem;
+}
+.toDoLi_title {
+  font-weight: 600;
+  color: var(--title-color);
+}
+.toDoLi_countAll {
+  margin: 0 15px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: var(--main-background-color);
+  background-color: var(--point-color);
 }
 
-.App-link {
-  color: #61dafb;
+/* toDoLi_form */
+
+.toDoLi_inputForm {
+  text-align: center;
+  margin: 0 auto 20px;
+}
+.toDoLi_inputText,
+.toDoLi_button {
+  display: inline-block;
+  margin: 0 0.2rem 0;
+  padding: 2px 15px;
+  font-size: 1.8rem;
+  line-height: 1em;
+  border: 2px solid var(--point-color);
+  border-radius: 2px;
+}
+.toDoLi_button {
+  line-height: 1.1em;
+  background-color: var(--point-color);
+  color: var(--main-background-color);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* toDo */
+.toDoLi_list {
+  padding: 1.5rem 2.5rem 1rem;
+  margin: 0 auto 20px;
+  background-color: #fdfdf2;
+}
+.toDoLi_text {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border: 2px dashed #ffd3cd;
+  border-radius: 4px;
+}
+.toDoLi_text.toDoLi_text-important {
+  border-color: var(--checked-color);
+  color: var(--checked-color);
+}
+.toDoLi_text.toDoLi_text-complete {
+  text-decoration: line-through;
+}
+.toDoLi_text.toDoLi_text-complete.toDoLi_text-important {
+  border-color: var(--checked-color);
+  color: var(--checked-color);
+  text-decoration: line-through;
+}
+.toDoLi_checkbox {
+  padding: 0.5rem 0 0;
+  text-align: right;
+  color: var(--title-color);
+  line-height: 2rem;
+}
+.toDoLi_checkbox label {
+  margin: 0 4px;
+}
+.toDoLi_checkbox label input {
+  display: inline-block;
+  margin: 0 0 0 2px;
+}
+.toDoLi_delete {
+  margin: 0 0 0 4px;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+  opacity: 0.5;
+}
+.toDoLi_delete:hover {
+  opacity: 1;
+}
+
+/* cat */
+.toDoLi_noList {
+  display: none;
+  width: 100%;
+  margin: 20px auto;
+}
+.toDoLi_noList.toDoLi_noList-view {
+  display: block;
+}
+.toDoLi_noListTxt {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--title-color);
+}
+.toDoLi_allClerButton {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 4px 15px;
+  font-size: 1.8rem;
+  line-height: 1em;
+  border-bottom: 2px solid var(--point-color);
+  line-height: 1.1em;
+  color: var(--point-color);
+  cursor: pointer;
+  opacity: 0.6;
+}
+.toDoLi_allClerButton:hover {
+  opacity: 1;
 }
